@@ -11,7 +11,10 @@ import SwiftUI
 struct ShopEaseApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                ProductListView()
+            }
+            .navigationViewStyle(.stack)
         }
     }
 }
