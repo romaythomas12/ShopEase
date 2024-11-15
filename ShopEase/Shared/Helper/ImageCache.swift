@@ -7,7 +7,12 @@
 
 import UIKit
 
-actor ImageCache {
+protocol ImageCaching {
+    func image(forKey key: String) async -> UIImage?
+    func setImage(_ image: UIImage, forKey key: String) async
+}
+
+actor ImageCache: ImageCaching {
     static let shared = ImageCache()
 
     private let cache = NSCache<NSString, UIImage>()

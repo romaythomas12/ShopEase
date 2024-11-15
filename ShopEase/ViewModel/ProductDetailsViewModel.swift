@@ -19,12 +19,12 @@ class ProductDetailsViewModel: ObservableObject {
     @Published private(set) var state: State = .loading
     @Published private(set) var isBookmarked: Bool = false
 
-    private let service: any ProductServiceProtocol
+    private let service: any ProductDetailsAPIProtocol
     private let bookmarkManager: any BookmarkManaging
     private let productId: String
     private var cancellables: Set<AnyCancellable> = []
 
-    init(service: any ProductServiceProtocol = ProductService(),
+    init(service: any ProductDetailsAPIProtocol = ProductDetailsAPI(),
          bookmarkManager: any BookmarkManaging = BookmarkManager.shared,
          productId: String) {
         self.service = service

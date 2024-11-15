@@ -5,6 +5,7 @@
 //  Created by Thomas Romay on 02/11/2024.
 //
 
+import Combine
 import Foundation
 protocol BookmarkManaging: ObservableObject {
     var bookmarkedProductIDs: Set<String> { get }
